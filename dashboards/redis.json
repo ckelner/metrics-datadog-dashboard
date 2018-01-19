@@ -1,5 +1,5 @@
 {
-  "board_title": "Example Redis Dashboard",
+  "board_title": "PCF Redis Dashboard",
   "board_bgtype": "board_graph",
   "original_title": "",
   "height": 91,
@@ -23,7 +23,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "( avg:<< MetricPrefix >>p_redis.p_redis_info_stats_keyspace_hits{$scope} / ( avg:<< MetricPrefix >>p_redis.p_redis_info_stats_keyspace_hits{$scope} + avg:<< MetricPrefix >>p_redis.p_redis_info_stats_keyspace_misses{$scope} ) ) * 100",
+            "q": "( avg:cloudfoundry.nozzle.p_redis.p_redis_info_stats_keyspace_hits{$scope} / ( avg:cloudfoundry.nozzle.p_redis.p_redis_info_stats_keyspace_hits{$scope} + avg:cloudfoundry.nozzle.p_redis.p_redis_info_stats_keyspace_misses{$scope} ) ) * 100",
             "aggregator": "avg",
             "conditional_formats": [],
             "type": "line"
@@ -57,7 +57,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "avg:<< MetricPrefix >>router_0.latency{$scope}",
+            "q": "avg:cloudfoundry.nozzle.router_0.latency{$scope}",
             "aggregator": "avg",
             "conditional_formats": [],
             "type": "line",
@@ -85,7 +85,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "sum:<< MetricPrefix >>p_redis.p_redis_info_memory_used_memory{$scope}",
+            "q": "sum:cloudfoundry.nozzle.p_redis.p_redis_info_memory_used_memory{$scope}",
             "aggregator": "avg",
             "conditional_formats": [],
             "type": "area"
@@ -151,7 +151,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "sum:<< MetricPrefix >>p_redis.p_redis_info_clients_blocked_clients{$scope}",
+            "q": "sum:cloudfoundry.nozzle.p_redis.p_redis_info_clients_blocked_clients{$scope}",
             "aggregator": "max",
             "conditional_formats": [
               {
@@ -190,7 +190,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "sum:<< MetricPrefix >>p_redis.p_redis_info_clients_connected_clients{$scope}",
+            "q": "sum:cloudfoundry.nozzle.p_redis.p_redis_info_clients_connected_clients{$scope}",
             "aggregator": "avg",
             "conditional_formats": [],
             "type": "area",
@@ -259,7 +259,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "sum:<< MetricPrefix >>p_redis.p_redis_info_persistence_rdb_changes_since_last_save{$scope}",
+            "q": "sum:cloudfoundry.nozzle.p_redis.p_redis_info_persistence_rdb_changes_since_last_save{$scope}",
             "aggregator": "avg",
             "conditional_formats": [
               {
@@ -298,7 +298,7 @@
         "viz": "timeseries",
         "requests": [
           {
-            "q": "per_second(avg:<< MetricPrefix >>p_redis.p_redis_info_stats_total_commands_processed{$scope})",
+            "q": "per_second(avg:cloudfoundry.nozzle.p_redis.p_redis_info_stats_total_commands_processed{$scope})",
             "aggregator": "avg",
             "conditional_formats": [],
             "type": "line",

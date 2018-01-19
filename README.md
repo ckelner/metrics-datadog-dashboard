@@ -10,9 +10,10 @@ To upload a dashboard to Datadog:
     ```
 
 1. Replace occurences of `<< MetricPrefix >>` with the `MetricPrefix` defined in your [firehose nozzle config](https://github.com/cloudfoundry-incubator/datadog-firehose-nozzle).
-1. Run `import_redis_dashboard [FILENAME]`, passing in the name of the file that contains your dashboard configuration. See `dashboards/redis.json` for an example.
+  1. _Chris Kelner: This has been done and committed to this repo; using the default prefix `cloudfoundry.nozzle.*`_
+1. Run `ruby import_static_screenboard [FILENAME]`, passing in the name of the file that contains your dashboard configuration. See `dashboards/redis.json` for an example.
 
-To get a JSON representation of an existing dashboard, run `get_screenboard [screenboard_id]` or `get_all_screenboards` if you don't know the screenboard_id.
+To get a JSON representation of an existing dashboard, run `ruby get_screenboard [screenboard_id]` or `ruby get_all_screenboards` if you don't know the screenboard_id.
 
 
 # CF Mysql example dashboard
@@ -29,4 +30,20 @@ To upload a dashboard to Datadog:
     export DATADOG_API_KEY=theapikey
     export DATADOG_APP_KEY=theappkey
     ```
-1. Run `import_mysql_dashboard`
+1. Run `gem install dogapi erubis`
+1. Run `ruby import_mysql_dashboard`
+
+# CF BOSH System Metrics Dashboard
+
+Taken from the [Pivotal CloudOps team repository](https://github.com/pivotal-cf-experimental/datadog-config-oss/blob/master/dashboard_templates/shared/bosh_system_metrics.json.erb)
+
+This is a hardcoded example for `wtcdev2` - but should leverage similar pattern
+to the MySQL example for reusability.
+
+1. Set your DATADOG_APP_KEY and DATADOG_API_KEY in your environment (you can find them under Integrations > APIs)
+
+    ```
+    export DATADOG_API_KEY=theapikey
+    export DATADOG_APP_KEY=theappkey
+    ```
+1. Run `ruby import_static_timeboard dashboards/bosh_system_metrics.json`

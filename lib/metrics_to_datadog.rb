@@ -26,6 +26,18 @@ class MetricsToDatadog
 
   end
 
+  def set_timeboard(dashboard_config, title, description)
+    if !File.exist?(dashboard_config) then
+      raise RuntimeError, "The dashboard config does not exist."
+    end
+
+    File.open(dashboard_config) do |file|
+      dashboard = JSON.parse(file.read.strip)
+      @dogclient.create_dashboard(title, description, dashboard["graphs"])
+    end
+
+  end
+
   def get_all_screenboards
     screenboards = @dogclient.get_all_screenboards()
     JSON.dump(screenboards)
