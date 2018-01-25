@@ -48,6 +48,11 @@ class MetricsToDatadog
     JSON.dump(screenboard)
   end
 
+  def get_timeboard(timeboard_id)
+    timeboard = @dogclient.get_dashboard(timeboard_id)
+    JSON.dump(timeboard)
+  end
+
   def get_monitor(monitor_id)
     monitor = @dogclient.get_monitor(monitor_id)
     JSON.dump(monitor)
