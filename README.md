@@ -1,3 +1,8 @@
+# PCF Dashboards
+These are Datadog Dashboards for PCF environments using the metrics coming through the Datadog firehose nozzle. These are only a small subset of those OOTB Dashboards offered by Datadog, but it is an ever growing collection. The original effort comes from Pivotal themselves at https://github.com/pivotal-cf/metrics-datadog-dashboard -- we're also considering and looking at the PCF's CloudOps team dashboard collection at https://github.com/pivotal-cf-experimental/datadog-config-oss/.
+
+To get a JSON representation of an existing dashboard, run `ruby get_screenboard [screenboard_id]` or `ruby get_all_screenboards` if you don't know the screenboard_id.
+
 # CF Redis example dashboard
 
 To upload a dashboard to Datadog:
@@ -12,9 +17,6 @@ To upload a dashboard to Datadog:
 1. Replace occurences of `<< MetricPrefix >>` with the `MetricPrefix` defined in your [firehose nozzle config](https://github.com/cloudfoundry-incubator/datadog-firehose-nozzle).
   1. _Chris Kelner: This has been done and committed to this repo; using the default prefix `cloudfoundry.nozzle.*`_
 1. Run `ruby import_static_screenboard [FILENAME]`, passing in the name of the file that contains your dashboard configuration. See `dashboards/redis.json` for an example.
-
-To get a JSON representation of an existing dashboard, run `ruby get_screenboard [screenboard_id]` or `ruby get_all_screenboards` if you don't know the screenboard_id.
-
 
 # CF Mysql example dashboard
 
