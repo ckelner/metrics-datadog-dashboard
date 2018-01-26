@@ -1,9 +1,14 @@
 # PCF Dashboards
-These are Datadog Dashboards for PCF environments using the metrics coming through the Datadog firehose nozzle. These are only a small subset of those OOTB Dashboards offered by Datadog, but it is an ever growing collection. The original effort comes from Pivotal themselves at https://github.com/pivotal-cf/metrics-datadog-dashboard -- we're also considering and looking at the PCF's CloudOps team dashboard collection at https://github.com/pivotal-cf-experimental/datadog-config-oss/.
+These are Datadog Dashboards for PCF environments using the metrics coming through the Datadog firehose nozzle. These are only a small subset of those OOTB Dashboards offered by Datadog, but it is an ever growing collection. The original effort comes from Pivotal themselves at https://github.com/pivotal-cf/metrics-datadog-dashboard (of which is a fork, but we've diverted fairly far from the original intent) -- we're also considering and looking at the PCF's CloudOps team dashboard collection at https://github.com/pivotal-cf-experimental/datadog-config-oss/.
 
 To get a JSON representation of an existing screenboard, run `ruby get_screenboard [screenboard_id]` or `ruby get_all_screenboards` if you don't know the screenboard_id.
 
 To get a JSON representation of an existing timeboard, run `ruby get_timeboard [timeboard_id]`.
+
+# Noteworthy
+It is worth noting that the metrics emitted by Cloud Foundry and those collected natively by the Datadog agent through out of the box integrations do not always align. These dashboards serve as examples and are primarily carved from either PCF work or the out of the box Datadog dashboards that have been converted to use the Cloud Foundry nozzle metrics. In some cases certain metrics were not emitted from the CF firehose and therefore graphs or components were dropped and in some cases conversions were made. These dashboards should serve as examples and starting points and be expanded upon by the team implementing them. Cloud foundry is rich in metrics and only small subsets are being exposed via these dashboards.
+
+Additionally, all of these dashboards use to the default CF nozzle prefix: `cloudfoundry.nozzle.*`.
 
 # CF RabbitMQ example screenboard
 To push to Datadog:
