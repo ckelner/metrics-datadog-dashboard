@@ -12,7 +12,7 @@ if app_key.nil? || api_key.nil? then
 end
 
 if dashboard_config.nil? then
-  puts "Usage: import-dashboad /path/to/dashboard.json"
+  puts "Usage: import_static_screenboard /path/to/dashboard.json"
   exit 1
 end
 
