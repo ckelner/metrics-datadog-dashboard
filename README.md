@@ -1,5 +1,5 @@
 # PCF Dashboards
-These are Datadog Dashboards for PCF environments using the metrics coming through the Datadog firehose nozzle. These are only a small subset of those OOTB Dashboards offered by Datadog, but it is an ever growing collection. The original effort comes from Pivotal themselves at https://github.com/pivotal-cf/metrics-datadog-dashboard (of which is a fork, but we've diverted fairly far from the original intent) -- we're also considering and looking at the PCF's CloudOps team dashboard collection at https://github.com/pivotal-cf-experimental/datadog-config-oss/.
+These are Datadog Dashboards for PCF environments using the metrics coming through the Datadog firehose nozzle. These are only a small subset of those OOTB Dashboards offered by Datadog, but it is an ever growing collection. The original effort comes from Pivotal themselves at https://github.com/pivotal-cf/metrics-datadog-dashboard (of which this was originally a fork, but we've diverted fairly far from the original intent) -- we're also considering and looking at the PCF's CloudOps team dashboard collection at https://github.com/pivotal-cf-experimental/datadog-config-oss/.
 
 To get a JSON representation of an existing screenboard, run `ruby get_screenboard [screenboard_id]` or `ruby get_all_screenboards` if you don't know the screenboard_id.
 
