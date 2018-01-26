@@ -33,7 +33,7 @@ class MetricsToDatadog
 
     File.open(dashboard_config) do |file|
       dashboard = JSON.parse(file.read.strip)
-      @dogclient.create_dashboard(title, description, dashboard["graphs"])
+      @dogclient.create_dashboard(title, description, dashboard["graphs"], dashboard["template_variables"])
     end
 
   end
